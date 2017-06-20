@@ -1,0 +1,22 @@
+<h2>My Channels</h2>
+<div>
+  <label>Channel name:</label> <input #channelName />
+  <button (click)="add(channelName.value); channelName.value=''">
+    Add
+  </button>
+</div>
+<ul class="channels">
+  <li *ngFor="let channel of channels" (click)="onSelect(channel)"
+      [class.selected]="channel === selectedChannel">
+    <span class="badge">{{channel.id}}</span>
+    <span>{{channel.name}}</span>
+    <button class="delete"
+      (click)="delete(channel); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedChannel">
+  <h2>
+    {{selectedChannel.name | uppercase}} is my channel
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

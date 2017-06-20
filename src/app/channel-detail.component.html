@@ -1,0 +1,26 @@
+<div *ngIf="channel">
+
+
+  <md-tab-group>
+    <md-tab label="Messages">
+      <h2>{{channel.name}} details!</h2>
+      <div>
+        <label>id: </label>{{hero.id}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="channel.name" placeholder="name" />
+      </div>
+      <button (click)="goBack()">Back</button>
+      <button (click)="save()">Save</button>
+    </md-tab>
+    <md-tab label="Source">
+      <h1>Some more tab content</h1>
+      <p>...</p>
+    </md-tab>
+    <md-tab label="Destination">
+      <h1>Some more tab content</h1>
+      <p>...</p>
+    </md-tab>
+  </md-tab-group>
+
+</div>

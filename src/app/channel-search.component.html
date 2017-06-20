@@ -1,0 +1,10 @@
+<div id="search-component">
+  <h4>Channel Search</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let channel of channels | async"
+         (click)="gotoDetail(channel)" class="search-result" >
+      {{channel.name}}
+    </div>
+  </div>
+</div>

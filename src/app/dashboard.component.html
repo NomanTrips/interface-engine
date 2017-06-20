@@ -1,0 +1,35 @@
+
+<!--
+<div class="grid grid-pad">
+  <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </a>
+</div>
+-->
+<md-card>
+<ng2-md-datatable selectable="false">
+  <ng2-md-datatable-header>
+    <ng2-md-datatable-column >Status</ng2-md-datatable-column>
+    <ng2-md-datatable-column sortableValue="name">Channel name</ng2-md-datatable-column>
+    <ng2-md-datatable-column sortableValue="id">Id</ng2-md-datatable-column>
+    <ng2-md-datatable-column sortableValue="received">Received</ng2-md-datatable-column>
+    <ng2-md-datatable-column sortableValue="sent" numeric>Sent</ng2-md-datatable-column>
+    <ng2-md-datatable-column sortableValue="errors" numeric>Errors</ng2-md-datatable-column>
+  </ng2-md-datatable-header>
+  <tbody>
+    <ng2-md-datatable-row  *ngFor="let channel of channels"  >
+      <td><button md-button [routerLink]="['/detail', channel.id]" md-raised-button color="primary">Details</button></td>
+      <td >{{channel.name}}</td>
+      <td class="numeric">{{channel.id}}</td>
+      <td class="numeric">{{channel.received}}</td>
+      <td class="numeric">{{channel.sent}}</td>
+      <td class="numeric">{{channel.errors}}</td>
+    </ng2-md-datatable-row>
+  </tbody>
+</ng2-md-datatable>
+
+<channel-search></channel-search>
+
+</md-card>
