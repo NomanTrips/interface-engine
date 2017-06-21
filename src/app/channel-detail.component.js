@@ -18,6 +18,7 @@ var ChannelDetailComponent = (function () {
         this.channelService = channelService;
         this.route = route;
         this.location = location;
+        this.inboundTypes = [{ text: 'SFTP' }, { text: 'HTTP' }, { text: 'TCP/IP' }];
     }
     ChannelDetailComponent.prototype.ngOnInit = function () {
         var _this = this;

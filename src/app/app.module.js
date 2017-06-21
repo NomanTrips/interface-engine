@@ -43,6 +43,8 @@ AppModule = __decorate([
             material_1.MdListModule,
             ng2_md_datatable_1.MdDataTableModule,
             material_1.MdTabsModule,
+            material_1.MdSelectModule,
+            material_1.MdInputModule,
         ],
         declarations: [
             app_component_1.AppComponent,

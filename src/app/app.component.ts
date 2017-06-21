@@ -16,10 +16,7 @@ import { Component }          from '@angular/core';
     <span class="app-toolbar-filler"></span>
     <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
   </md-toolbar>
-    <nav>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-    </nav>
+
     <router-outlet></router-outlet>
   </md-sidenav-container>
   `,

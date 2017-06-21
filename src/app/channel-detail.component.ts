@@ -20,6 +20,8 @@ export class ChannelDetailComponent implements OnInit {
     private location: Location
   ) {}
 
+  inboundTypes = [{text: 'SFTP'},{text: 'HTTP'}, {text: 'TCP/IP'}];
+
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.channelService.getChannel(+params['id']))

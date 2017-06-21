@@ -27,3 +27,8 @@ button:disabled {
   color: #ccc; 
   cursor: auto;
 }
+
+md-card {
+  margin: 20px;
+  padding: 20px;
+}

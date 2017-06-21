@@ -1,25 +1,64 @@
 <div *ngIf="channel">
+  <!--
+  <h2>{{channel.name}} details!</h2>
+  <div>
+    <label>id: </label>{{channel.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="channel.name" placeholder="name" />
+  </div>
 
+  <button (click)="goBack()">Back</button>
+  
+
+  <button (click)="save()">Save</button>
+-->
+  <div style="margin:20px;padding:20px;">
+
+    <md-input-container>
+      <input  style="color:white;" mdInput placeholder="Channel name" [(ngModel)]="channel.name">
+    </md-input-container>
+
+  </div>
 
   <md-tab-group>
     <md-tab label="Messages">
-      <h2>{{channel.name}} details!</h2>
-      <div>
-        <label>id: </label>{{channel.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="channel.name" placeholder="name" />
-      </div>
-      <button (click)="goBack()">Back</button>
-      <button (click)="save()">Save</button>
+      <md-card>
+        <ng2-md-datatable selectable="false">
+          <ng2-md-datatable-header>
+            <ng2-md-datatable-column>Date/time</ng2-md-datatable-column>
+            <ng2-md-datatable-column sortableValue="sender">Sender</ng2-md-datatable-column>
+            <ng2-md-datatable-column sortableValue="error">Error description</ng2-md-datatable-column>
+          </ng2-md-datatable-header>
+          <tbody>
+            <ng2-md-datatable-row>
+              <td>06/20/2017 21:00:00</td>
+              <td>192.161.13.44</td>
+              <td>Error: unbound parameter!</td>
+            </ng2-md-datatable-row>
+            <ng2-md-datatable-row>
+              <td>06/20/2017 05:00:00</td>
+              <td>192.161.13.44</td>
+              <td>Disconnected socket error!</td>
+            </ng2-md-datatable-row>
+          </tbody>
+        </ng2-md-datatable>
+      </md-card>
     </md-tab>
     <md-tab label="Source">
-      <h1>Some more tab content</h1>
-      <p>...</p>
+      <md-card>
+        <h4>Configuration:</h4>
+        <md-select placeholder="Inbound type">
+          <md-option *ngFor="let type of inboundTypes" [value]="type.text">{{ type.text }}</md-option>
+        </md-select>
+        <p>...</p>
+      </md-card>
     </md-tab>
     <md-tab label="Destination">
-      <h1>Some more tab content</h1>
-      <p>...</p>
+      <md-card>
+        <h1>Some more tab content</h1>
+        <p>...</p>
+      </md-card>
     </md-tab>
   </md-tab-group>
 
